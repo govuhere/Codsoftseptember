@@ -8,20 +8,24 @@ def data_get():
     w_label1.config(text=data["weather"][0]["main"])
     t_label1.config(text=str(round(data["main"]["temp"]-273.15,1)))
     h_label1.config(text=data["main"]["humidity"])
+    ws_label1.config(text=data["wind"]["speed"])
     win.config(bg="pink")
     t_label.config(bg="pink")
     w_label.config(bg="pink")
     h_label.config(bg="pink")
     name_label.config(bg="pink")
+    ws_label.config(bg="pink")
 def cleardata():
     w_label1.config(text="")
     t_label1.config(text="")
     h_label1.config(text="")
+    ws_label1.config(text="")
     win.config(bg="skyblue")
     t_label.config(bg="skyblue")
     w_label.config(bg="skyblue")
     name_label.config(bg="skyblue")
     h_label.config(bg="skyblue")
+    ws_label.config(bg="skyblue")
     
 win=Tk()
 win.title("GDG APP")
@@ -61,6 +65,14 @@ h_label.place(x=25,y=350,height=30,width=200)
 h_label1=Label(win,text="",foreground="black",
                 font=("Arial",15))
 h_label1.place(x=250,y=350,height=30,width=210)
+
+
+ws_label=Label(win,text="Humidity ",background="skyblue",foreground="black",
+                font=("Arial",15))
+ws_label.place(x=25,y=400,height=30,width=200)
+ws_label1=Label(win,text="",foreground="black",
+                font=("Arial",15))
+ws_label1.place(x=250,y=400,height=30,width=210)
 
 
 done_button=Button(win,text="Search",background="lightgrey",
